@@ -9,14 +9,18 @@ namespace WebApplication1.Controllers
     public class HelloWorldController : Controller
     {
         // GET: HelloWorld
-        public string Index()
+        public ActionResult Index()
         {
-            return "Bienvenue sur l'index";
+            return View();
         }
         //GET : /Helloworld/
-        public string HelloWorld()
+        public ActionResult Welcome(string name, int id = 1)
         {
-            return "Bonjour le monde";
+            //return "bonjour le monde";
+            ViewBag.message = "Hello" + name;
+            ViewBag.numtimes = id;
+
+            return View();
         }
     }
 }
